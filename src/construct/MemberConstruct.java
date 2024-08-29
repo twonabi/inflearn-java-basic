@@ -5,11 +5,12 @@ public class MemberConstruct {
     int age;
     int grade;
 
-    // 추가 (오버로딩)
+    // 추가 (오버로딩) -> this() 자기 자신의(17번줄에 있는) 생성자를 호출
     MemberConstruct(String name, int age) {
-        this.name = name;
+        this(name, age, 50); // this() 호출로 변경 후
+        /*this.name = name; // 변경전.
         this.age = age;
-        this.grade = 50;
+        this.grade = 50;*/
 
     }
 
