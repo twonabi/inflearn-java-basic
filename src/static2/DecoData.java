@@ -20,6 +20,7 @@ public class DecoData {
         staticValue++; // 정적 변수 접근
         staticMethod(); // 정적 메서드 접근
     }
+
     private void instanceMethod() {
         System.out.println("instanceValue = " + instanceValue);
     }
