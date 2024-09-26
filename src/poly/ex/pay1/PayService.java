@@ -4,10 +4,11 @@ public class PayService {
 
     public void processPay(String option, int amount) {
 
+        // 변하지 않는 부분
         boolean result = false;
         System.out.println("결제를 시작합니다: option=" + option + ", amount=" +amount);
 
-        Pay pay = findPay(option);
+        Pay pay = PayStore.findPay(option);
         if (pay != null) {
             result = pay.pay(amount);
         }
@@ -20,14 +21,4 @@ public class PayService {
             System.out.println();
         }
     }
- public Pay findPay(String option){
-     if (option.equals("kakao")) {
-        return new KakaoPay();
-     } else if (option.equals("naver")) {
-         return new NaverPay();
-     } else {
-         System.out.println("결제 수단이 없습니다.");
-         return null;
-     }
-   }
 }
